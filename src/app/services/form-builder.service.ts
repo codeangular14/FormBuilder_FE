@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ApiHelper } from '../../shared/helpers/api.helper';
-import { FormBuilderApis } from '../../shared/constants/apiEndPointPathName';
-import { SAMPLE_SURVEY_TEMPLATE } from '../../mock-data/sample-survey-template';
+import { FormBuilderApis } from '../shared/constants/apiEndPointPathName';
+import { SAMPLE_SURVEY_TEMPLATE } from '../mock-data/sample-survey-template';
+import { ApiHelper } from '../shared/helpers/api.helper';
 
 @Injectable({
   providedIn: 'root',

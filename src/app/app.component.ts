@@ -3,12 +3,12 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-   imports: [RouterOutlet, RouterLink],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
+  imports: [RouterOutlet, RouterLink],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
   standalone: true,
 })
 
-export class App {
+export class AppComponent {
   protected readonly title = signal('surveyjs-form-builder');
 }

@@ -2,13 +2,12 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Model } from 'survey-core';
 import { SurveyModule } from 'survey-angular-ui';
-import { FormBuilderService } from '../../form-builder/form-builder/form-builder.service';
-
+import { FormBuilderService } from '../../../services/form-builder.service';
 @Component({
   selector: 'app-form-renderer',
   standalone: true,
   imports: [CommonModule, SurveyModule],
-  templateUrl: './form-renderer.html'
+  templateUrl: './form-renderer.component.html'
 })
 export class FormRendererComponent implements OnInit {
 

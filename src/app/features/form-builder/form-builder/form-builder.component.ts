@@ -3,14 +3,15 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SurveyCreatorModel } from 'survey-creator-core';
 import { SurveyCreatorModule } from 'survey-creator-angular';
 import { Model } from 'survey-core';
-import { FormBuilderService } from './form-builder.service';
+import { FormBuilderService } from '../../../services/form-builder.service';
 
 @Component({
   selector: 'app-form-builder',
   standalone: true,
   imports: [SurveyCreatorModule, CommonModule],
-  templateUrl: './form-builder.html'
+  templateUrl: './form-builder.component.html'
 })
+
 export class FormBuilderComponent implements OnDestroy {
 
   creator!: SurveyCreatorModel;
