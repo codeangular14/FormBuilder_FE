@@ -23,13 +23,22 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
               "src/material-theme.scss",
               "survey-core/survey-core.min.css",
               "survey-creator-core/survey-creator-core.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/fontawesome.css",
+              "src/assets/css/templatemo-grad-school.css",
+              "src/assets/css/owl.css",
+              "src/assets/css/lightbox.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -80,7 +89,7 @@
               ],
               "outputHashing": "all"
             },
-              "dev": {
+            "dev": {
               "budgets": [
                 {
                   "type": "initial",
@@ -101,7 +110,6 @@
               ],
               "outputHashing": "all"
             },
-            
             "development": {
               "optimization": false,
               "extractLicenses": false,

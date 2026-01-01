@@ -11,3 +11,6 @@
 .sd-header__text .sd-title {
   font-size: 18px;
 }
+.active a {
+    border: 2px solid #f5a425;
+}
