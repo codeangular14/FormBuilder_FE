@@ -1,0 +1,9 @@
+
+ <survey-creator
+  *ngIf="isBrowser && creator"
+  [model]="creator">
+</survey-creator>
+
+<button class="btn btn-primary mt-3" (click)="saveTemplate()">
+  Save Survey Template
+</button>

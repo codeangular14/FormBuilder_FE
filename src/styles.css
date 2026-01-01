@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.svc-creator__banner {
+  display: none;
+}
+.survey-creator, .svc-creator {
+  height: 100vh;
+}
+.sd-title.sd-container-modern__title {
+  padding: 5px;
+}
+.sd-header__text .sd-title {
+  font-size: 18px;
+}
