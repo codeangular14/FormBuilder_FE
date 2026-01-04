@@ -1,9 +1,24 @@
+<form [formGroup]="formGroup" >
+  
+<app-form-control
+   [formGroup]="formGroup"
+    inputId="district"
+    controlName="districtId"
+    [options]="districts"
+    valueKey="districtId"
+    labelKey="districtName"
+    placeholder="Select District"
+    >
+  </app-form-control>
 
- <survey-creator
-  *ngIf="isBrowser && creator"
-  [model]="creator">
-</survey-creator>
 
-<button class="btn btn-primary mt-3" (click)="saveTemplate()">
-  Save Survey Template
-</button>
+  @if(isBrowser && creator) {
+  <survey-creator [model]="creator">
+  </survey-creator>
+  }
+
+  <button class="btn btn-primary mt-3" type="submit" (click)="saveTemplate()">
+    Save Survey Template
+  </button>
+
+</form>

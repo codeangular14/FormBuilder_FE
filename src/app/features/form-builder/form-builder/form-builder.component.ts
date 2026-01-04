@@ -4,11 +4,13 @@ import { SurveyCreatorModel } from 'survey-creator-core';
 import { SurveyCreatorModule } from 'survey-creator-angular';
 import { Model } from 'survey-core';
 import { FormBuilderService } from '../../../services/form-builder.service';
+import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControlComponent } from '../../../shared/components/form-control/form-control.component';
 
 @Component({
   selector: 'app-form-builder',
   standalone: true,
-  imports: [SurveyCreatorModule, CommonModule],
+  imports: [SurveyCreatorModule, CommonModule, ReactiveFormsModule, FormControlComponent],
   templateUrl: './form-builder.component.html'
 })
 
@@ -17,8 +19,8 @@ export class FormBuilderComponent implements OnDestroy {
   creator!: SurveyCreatorModel;
   isBrowser = false;
   payload: { [key: string]: any } = {};
-  static FormBuilderComponent: any;
-
+  districts: Array<{ [key: string]: any }> = [];
+  formGroup!: FormGroup;
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private formBuilderService: FormBuilderService
@@ -27,6 +29,12 @@ export class FormBuilderComponent implements OnDestroy {
   }
 
   ngOnInit(): void {
+    this.initializeFormControls();
+    this.districts = [
+      { districtId: 'D001', districtName: 'District 1' },
+      { districtId: 'D002', districtName: 'District 2' },
+      { districtId: 'D003', districtName: 'District 3' }
+    ];  
     if (!this.isBrowser) {
       return; // ⛔ SSR guard
     }
@@ -76,6 +84,12 @@ export class FormBuilderComponent implements OnDestroy {
 
 
   saveTemplate() {
+    debugger;
+    if (this.formGroup.invalid) {
+    this.formGroup.markAllAsTouched();
+    return;
+  }
+    console.log(this.formGroup.value);
     const surveyJson = this.creator.JSON;
     console.log('Saving survey template:', surveyJson);
 
@@ -92,6 +106,12 @@ export class FormBuilderComponent implements OnDestroy {
       json: surveyJson
     }).subscribe(() => {
       alert('Survey template saved successfully');
+    });
+  }
+
+  initializeFormControls() {
+    this.formGroup = new FormGroup({
+      districtId: new FormControl('', Validators.required),
     });
   }
 }

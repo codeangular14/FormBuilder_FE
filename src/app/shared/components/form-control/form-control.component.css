@@ -1,0 +1,78 @@
+.fs-7 {
+  font-size: 13px;
+}
+textarea {
+  height: auto;
+  resize: vertical;
+  padding-top: 5px;
+}
+
+ng-select {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.ng-select .ng-select-container .ng-value-container .ng-input > input {
+  border: 1px #000 solid !important;
+}
+.custom_select {
+  display: block;
+  position: relative;
+  padding: 0.375rem 14px 0.375rem 2px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e0dfdf;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+::ng-deep .ng-dropdown-panel {
+  display: inline-block;
+  border: 1px solid #adadad;
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.9;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+  background: #fff;
+  color: #212529;
+  padding: 7px 12px !important;
+  border-radius: 2px !important;
+}
+::ng-deep .ng-select span {
+  margin-bottom: 4px;
+}
+::ng-deep .ng-select .ng-select-container {
+  padding: 0 0.75rem;
+}
+
+::ng-deep .ng-select.ng-select-focused .ng-placeholder {
+  display: none;
+}
+
+::ng-deep .ng-select.ng-select-opened .ng-placeholder {
+  display: none;
+}
+.dropdown-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 16px;
+  color: #666;
+}
+
+.disabled {
+  pointer-events: none;
+  background: #e9ecef;
+  color: #000;
+  border: 1px solid #e0dfdf !important;
+}

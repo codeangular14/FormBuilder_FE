@@ -1,0 +1,32 @@
+<div [formGroup]="formGroup">
+<select
+  class="form-select"
+  [class.is-invalid]="control?.invalid && (control?.touched || control?.dirty)"
+  [id]="inputId"
+  [formControlName]="controlName"
+  [attr.disabled]="readonly ? '' : null">
+  <option value="">{{ placeholder }}</option>
+  @for (item of options; track item[valueKey]) {
+  <option  [value]="item[valueKey]">
+    {{ item[labelKey] }}
+  </option>
+}
+
+</select>
+
+
+
+@if (control?.invalid && control?.touched) {
+  @for (err of control?.errors | keyvalue; track err.key) {
+      <!-- <pre>{{ err | json }}</pre> -->
+    <div class="text-danger fs-7">
+      @if (err.key === 'required') {
+        {{ errorMessage[err.key] }}
+      }
+    </div>
+  }
+}
+
+
+
+</div>
