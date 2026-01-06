@@ -1,5 +1,11 @@
+
+<section class="section main-banner" id="top" data-section="section1">
 <form [formGroup]="formGroup" >
-  
+
+  <div class="container-fluid">
+    <div class="row pt-2">
+      <div class="col-lg-4">
+        
 <app-form-control
    [formGroup]="formGroup"
     inputId="district"
@@ -8,9 +14,14 @@
     valueKey="districtId"
     labelKey="districtName"
     placeholder="Select District"
+    label="Department"
     >
   </app-form-control>
 
+      </div>
+    </div>
+  </div>
+ 
 
   @if(isBrowser && creator) {
   <survey-creator [model]="creator">
@@ -22,3 +33,4 @@
   </button>
 
 </form>
+</section>

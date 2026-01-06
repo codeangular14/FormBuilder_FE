@@ -19,6 +19,9 @@ export class FormControlComponent implements OnInit {
   @Input() labelKey = 'name';
   @Input() placeholder = 'Select';
   @Input() readonly = false;
+  @Input() isLabel: boolean = true;
+  @Input() label: string = '';
+  @Input() isRequired: boolean = false;
   // @Input() requiredMessage = 'This field is required';
   errorMessage: Record<string, string> = {
     required: 'The field is required',

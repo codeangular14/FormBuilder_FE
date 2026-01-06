@@ -56,7 +56,6 @@ export const IconConstant = {
     VIEW_ICON: "remove_red_eye",
     ACTIVATE_ICON: "check_circle",
     DEACTIVATE_ICON: "block",
-    DOWN_ICON: "arrow_downward",
     UP_ICON: "arrow_upward",
     LOCK_ICON: "lock",
     UNLOCK_ICON: "lock_open",
@@ -71,14 +70,4 @@ export const PageModeConstant = {
     MANAGE_MODE: "manage",
     VIEW_BLOCK_MODE: "viewBlockInventory",
     VIEW_DIST_BLOCK_MODE: "viewDistBlockInventory",
-}
-
-export const PROJECT_BUDGET_ALLOCATION_MSG = {
-    BUDGET_AMOUT_ZERO_VALIDATION: "Budget Amount should be greater than zero",
-    ALL_PROJECTS_SUM_VALIDATION:"All Projects * sum should be less than equal to $",
-    INCORRECT_PROJECT_DATA:"Incorrect data!"
-}
-
-export const DEMONSTRATION_WORKFLOW_STATUS = {
-    NOT_MOVED_FURTHER: 'Application will not moved further yet',
 }
