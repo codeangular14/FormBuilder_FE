@@ -21,6 +21,8 @@ export class FormBuilderComponent implements OnDestroy {
   payload: { [key: string]: any } = {};
   districts: Array<{ [key: string]: any }> = [];
   formGroup!: FormGroup;
+  isTemplateCreatorVisible: boolean = false;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private formBuilderService: FormBuilderService
@@ -28,22 +30,30 @@ export class FormBuilderComponent implements OnDestroy {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
+  onDepartmentSelection(event: any) {
+    if (event && event.target.value ) {
+      this.isTemplateCreatorVisible = true;
+    }
+    else {
+      this.isTemplateCreatorVisible = false;
+    }
+  }
+
   ngOnInit(): void {
     this.initializeFormControls();
     this.districts = [
-      { districtId: 'D001', districtName: 'District 1' },
-      { districtId: 'D002', districtName: 'District 2' },
-      { districtId: 'D003', districtName: 'District 3' }
-    ];  
+      { departmentId: 'D001', departmentName: 'HR' },
+      { departmentId: 'D002', departmentName: 'Account' }
+    ];
     if (!this.isBrowser) {
-      return; // ⛔ SSR guard
+      return;
     }
 
     this.creator = new SurveyCreatorModel({
-      showLogicTab: true,
-      showThemeTab: true,
-      showTranslationTab: true,
-      showJSONEditorTab: true,
+      showLogicTab: false,
+      showThemeTab: false,
+      showTranslationTab: false,
+      showJSONEditorTab: false,
       isAutoSave: false
     });
 
@@ -86,9 +96,9 @@ export class FormBuilderComponent implements OnDestroy {
   saveTemplate() {
     debugger;
     if (this.formGroup.invalid) {
-    this.formGroup.markAllAsTouched();
-    return;
-  }
+      this.formGroup.markAllAsTouched();
+      return;
+    }
     console.log(this.formGroup.value);
     const surveyJson = this.creator.JSON;
     console.log('Saving survey template:', surveyJson);
@@ -111,7 +121,7 @@ export class FormBuilderComponent implements OnDestroy {
 
   initializeFormControls() {
     this.formGroup = new FormGroup({
-      districtId: new FormControl('', Validators.required),
+      departmentId: new FormControl('', Validators.required),
     });
   }
 }

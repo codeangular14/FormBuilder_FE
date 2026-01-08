@@ -55,13 +55,77 @@
 </section>
 
 
+<section class="section why-us" data-section="section2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>Why choose Insight Now?</h2>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div id='tabs'>
+          <ul>
+            <li [class.ui-tabs-active]="activeTab === 1"><a (click)="showTabs(1)" >Dynamic Template</a></li>
+            <li [class.ui-tabs-active]="activeTab === 2"><a (click)="showTabs(2)" >Real Time Status</a></li>
+            <li [class.ui-tabs-active]="activeTab === 3"><a (click)="showTabs(3)" >Quality Service</a></li>
+          </ul>
+          <section class='tabs-content'>
+            @if(activeTab === 1) {
+            <article id='tabs-1'>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/images/choose-us-image-01.png" alt="">
+                </div>
+                <div class="col-md-6">
+                  <h4>Dynamic Template</h4>
+                  <p>Dynamic Template enables flexible, data-driven layouts that adapt automatically based on user input and system configuration. It allows real-time customization, reusable components, and faster updates without code changes, improving efficiency and user experience.</p>
+                </div>
+              </div>
+            </article>
+            }
+            @if(activeTab === 2) {
+            <article id='tabs-2'>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/images/choose-us-image-02.png" alt="">
+                </div>
+                <div class="col-md-6">
+                  <h4>Real Time Status</h4>
+                  <p>Real Time Status provides live updates on system activities, processes, and performance as they happen. It helps users track progress instantly, identify issues quickly, and make timely decisions with accurate, up-to-date information displayed in real time.</p>
+                </div>
+              </div>
+            </article>
+            }
+            @if(activeTab === 3) {
+            <article id='tabs-3'>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/images/choose-us-image-03.png" alt="">
+                </div>
+                <div class="col-md-6">
+                  <h4>Quality Service</h4>
+                  <p>Quality Service focuses on delivering reliable, efficient, and user-centric solutions with consistent performance. It ensures accuracy, timely support, and continuous improvement to meet user expectations and maintain high standards of service excellence.</p>
+                </div>
+              </div>
+            </article>
+            }
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <footer>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <p><i class="fa fa-copyright"></i> Copyright 2026 by Avengers
 
-          | Design: <a href="#"  target="_parent">Avengers</a><br>
+          | Design: <a href="#" target="_parent">Avengers</a><br>
           Distributed By: <a href="#" rel="sponsored" target="_blank">Avengers</a>
 
         </p>

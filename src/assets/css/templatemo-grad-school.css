@@ -291,10 +291,7 @@ a.menu-link { display: none; }
 
 .main-banner {
   position: relative;
-  max-height: 90%;
-  overflow: hidden;
   margin-top: 80px;
-  
 }
 
 #bg-video {

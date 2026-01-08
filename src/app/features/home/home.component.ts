@@ -12,4 +12,8 @@ import { HeaderComponent } from '../../shared/components/header/header.component
 
 export class HomeComponent {
 activeTab = 1;
+
+showTabs(tabIndex: number) {
+  this.activeTab = tabIndex;  
+}
 }

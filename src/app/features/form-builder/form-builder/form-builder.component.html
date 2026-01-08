@@ -1,36 +1,31 @@
-
 <section class="section main-banner" id="top" data-section="section1">
-<form [formGroup]="formGroup" >
-
-  <div class="container-fluid">
-    <div class="row pt-2">
-      <div class="col-lg-4">
-        
-<app-form-control
-   [formGroup]="formGroup"
-    inputId="district"
-    controlName="districtId"
-    [options]="districts"
-    valueKey="districtId"
-    labelKey="districtName"
-    placeholder="Select District"
-    label="Department"
-    >
-  </app-form-control>
-
+  <form [formGroup]="formGroup">
+    <div class="container-fluid border pb-2">
+      <div class="row pt-2">
+        <div class="col-lg-4">
+          <app-form-control [formGroup]="formGroup" inputId="district" controlName="departmentId" [options]="districts"
+            valueKey="departmentId" labelKey="departmentName" placeholder="Select Department" label="Department"
+            [isRequired]="true"
+             (change)="onDepartmentSelection($event)">
+          </app-form-control>
+        </div>
       </div>
     </div>
-  </div>
- 
 
-  @if(isBrowser && creator) {
-  <survey-creator [model]="creator">
-  </survey-creator>
-  }
+    @if(isTemplateCreatorVisible) {
+    <div>
+      @if(isBrowser && creator) {
+      <survey-creator [model]="creator">
+      </survey-creator>
+      }
+      <div class="border-top text-center pb-2">
+        <button class="btn btn-primary mt-3" type="submit" (click)="saveTemplate()">
+        Save Survey Template
+      </button>
+      </div>
+      
+    </div>
+    }
 
-  <button class="btn btn-primary mt-3" type="submit" (click)="saveTemplate()">
-    Save Survey Template
-  </button>
-
-</form>
+  </form>
 </section>
