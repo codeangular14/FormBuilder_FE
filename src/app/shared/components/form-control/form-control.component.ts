@@ -22,6 +22,7 @@ export class FormControlComponent implements OnInit {
   @Input() isLabel: boolean = true;
   @Input() label: string = '';
   @Input() isRequired: boolean = false;
+   @Input() inputType: 'text' | 'select' | 'date' = 'text';
   // @Input() requiredMessage = 'This field is required';
   errorMessage: Record<string, string> = {
     required: 'The field is required',

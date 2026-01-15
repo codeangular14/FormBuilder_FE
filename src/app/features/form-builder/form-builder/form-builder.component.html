@@ -3,7 +3,7 @@
     <div class="container-fluid border pb-2">
       <div class="row pt-2">
         <div class="col-lg-4">
-          <app-form-control [formGroup]="formGroup" inputId="district" controlName="departmentId" [options]="districts"
+          <app-form-control  inputType="select"  [formGroup]="formGroup" inputId="district" controlName="departmentId" [options]="districts"
             valueKey="departmentId" labelKey="departmentName" placeholder="Select Department" label="Department"
             [isRequired]="true"
              (change)="onDepartmentSelection($event)">

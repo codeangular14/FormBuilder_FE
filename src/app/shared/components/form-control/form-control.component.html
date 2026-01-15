@@ -6,6 +6,7 @@
     }
   </label>
   }
+@if (inputType === 'select') {
   <select class="form-select" [class.is-invalid]="control?.invalid && (control?.touched || control?.dirty)"
     [id]="inputId" [formControlName]="controlName" [attr.disabled]="readonly ? '' : null">
     <option value="">{{ placeholder }}</option>
@@ -14,8 +15,20 @@
       {{ item[labelKey] }}
     </option>
     }
-
   </select>
+}
+
+  @if (inputType === 'text') {
+  <input
+    type="text"
+    class="form-control"
+    [id]="inputId"
+    [placeholder]="placeholder"
+    [formControlName]="controlName"
+    [readonly]="readonly"
+    [class.is-invalid]="control?.invalid && (control?.touched || control?.dirty)"
+  />
+}
 
 
 

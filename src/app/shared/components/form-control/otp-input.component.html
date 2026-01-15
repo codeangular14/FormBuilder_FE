@@ -1,0 +1,22 @@
+<label for="otp-input">Enter OTP  <span class="text-danger">* </span></label>   
+<div class="otp-container" (paste)="onPaste($event)">
+  @for (ctrl of controls; track $index; let i = $index) {
+    <input
+      type="text"
+      class="otp-input"
+      maxlength="1"
+      inputmode="numeric"
+      autocomplete="one-time-code"
+      [id]="'otp-' + i"
+      [formControl]="ctrl"
+      (input)="onInput($event, i)"
+      (keydown)="onKeyDown($event, i)"
+       [class.is-invalid]="ctrl.invalid && ctrl.touched"
+    />
+  }
+</div>
+@if (isInvalid) {
+  <div class="otp-error">
+    OTP is required
+  </div>
+}
