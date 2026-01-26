@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { FormControlComponent } from '../form-control/form-control.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { OtpInputComponent } from '../form-control/otp-input.component';
+import { ButtonsComponent } from '../buttons/buttons.component';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import { OtpInputComponent } from '../form-control/otp-input.component';
     RouterLink,
     FormControlComponent,
     OtpInputComponent,
-    ReactiveFormsModule],
+    ReactiveFormsModule,
+  ButtonsComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   standalone: true

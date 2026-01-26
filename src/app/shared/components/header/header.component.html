@@ -24,12 +24,6 @@
   </nav>
 </header>
 
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="StepInModal" aria-hidden="true">
   <div class="modal-dialog">
@@ -53,10 +47,12 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" [disabled]="!isOtpValid">
+        <!-- <button class="btn btn-primary" [disabled]="!isOtpValid">
           Verify OTP
-        </button>
-        <button type="submit" class="btn btn-warning" (click)="stepIn()">Step In</button>
+        </button> -->
+        <app-buttons label="Verify OTP" btnType="button" cssClass="btn-primary" [disabled]="!isOtpValid"></app-buttons>
+        <app-buttons label="Step In" btnType="submit" cssClass="btn-warning"  (click)="stepIn()"></app-buttons>
+        <!-- <button type="submit" class="btn btn-warning" (click)="stepIn()">Step In</button> -->
       </div>
     </div>
   </div>

@@ -1,0 +1,11 @@
+<button
+  [type]="btnType"
+  class="btn"
+  [ngClass]="cssClass"
+  [disabled]="disabled"
+>
+  @if (isIcon) {
+    <i [class]="maticon"></i>
+  }
+  {{ label }}
+</button>

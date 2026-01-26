@@ -208,7 +208,7 @@ export class CommonService {
 	}
 
 	goOnDashBoard() {
-		this.router.navigateByUrl(DashBoardRoute);
+		this.router.navigateByUrl(DashBoardRoute.DASHBOARD);
 	}
 
 	isBeforeLoginRoute = () => {

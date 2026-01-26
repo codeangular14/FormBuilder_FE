@@ -6,7 +6,7 @@ export const UserManagementRoutes = {
   USER_ADD_EDIT: 'user-add-edit',
 };
 
-export const DashboardRoutes = {
+export const DashBoardRoute = {
   DASHBOARD: 'dashboard',
 };
 
