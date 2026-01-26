@@ -47,12 +47,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <!-- <button class="btn btn-primary" [disabled]="!isOtpValid">
-          Verify OTP
-        </button> -->
         <app-buttons label="Verify OTP" btnType="button" cssClass="btn-primary" [disabled]="!isOtpValid"></app-buttons>
         <app-buttons label="Step In" btnType="submit" cssClass="btn-warning"  (click)="stepIn()"></app-buttons>
-        <!-- <button type="submit" class="btn btn-warning" (click)="stepIn()">Step In</button> -->
       </div>
     </div>
   </div>
